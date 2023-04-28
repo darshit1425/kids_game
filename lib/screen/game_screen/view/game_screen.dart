@@ -57,10 +57,10 @@ class _Game_ScreenState extends State<Game_Screen> {
               height: double.infinity,
               width: double.infinity,
               color: Colors.red.shade50,
-              // child: Image.asset(
-              //   "assets/images/kids.jpg",
-              //   fit: BoxFit.cover,
-              // ),
+              child: Image.asset(
+                "assets/images/kids.jpg",
+                fit: BoxFit.cover,
+              ),
             ),
             Obx(
               () => Row(
@@ -136,22 +136,18 @@ class _Game_ScreenState extends State<Game_Screen> {
                                   builder:
                                       (context, candidateData, rejectedData) {
                                     return Container(
-                                      height: 70,
-                                      width: 70,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Colors.blueAccent.shade100),
                                       child: Align(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            "${game_contoller.ansList[index].title}",
-                                            style: TextStyle(fontSize: 50),
-                                          )),
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          "${game_contoller.ansList[index].title}",
+                                          style: TextStyle(fontSize: 50),
+                                        ),
+                                      ),
                                     );
                                   },
                                   onWillAccept: (data) {
                                     return data ==
-                                        game_contoller.qustionList[index].key;
+                                        game_contoller.ansList[index].key;
                                   },
                                   onAccept: (data) {
                                     game_contoller.ansList.removeAt(
